@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Leaderboard · Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi">
+  <meta name="description" content="Task-specific evaluation of rule knowledge and contextual interpretation in Chinese Bazi QA.">
+  <meta name="keywords" content="Bazi, benchmark, Chinese QA, language models, cultural knowledge, evaluation">
+  <meta name="author" content="Jiulin Li, Ping Huang">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2F6690">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi">
+  <meta property="og:title" content="Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi">
+  <meta property="og:description" content="Task-specific evaluation of rule knowledge and contextual interpretation in Chinese Bazi QA.">
+  <meta property="og:url" content="http://127.0.0.1:8000/leaderboard.html">
+  <meta property="og:image" content="http://127.0.0.1:8000/figures/02_theory_vs_case.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi">
+  <meta property="article:published_time" content="2026-09-29T00:00:00.000Z">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi">
+  <meta name="twitter:description" content="Task-specific evaluation of rule knowledge and contextual interpretation in Chinese Bazi QA.">
+  <meta name="twitter:image" content="http://127.0.0.1:8000/figures/02_theory_vs_case.png">
+
+  <!-- Academic / citation -->
+  <meta name="citation_title" content="Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi">
+  <meta name="citation_author" content="Jiulin Li">
+  <meta name="citation_author" content="Ping Huang">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Research manuscript · September 2026">
+  <meta name="citation_pdf_url" content="http://127.0.0.1:8000/pdfs/paper.pdf">
+
+  <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
+
+  <!-- 站点内资源一律用相对路径：本地预览、子路径部署、自定义域名都不需要改配置。
+       base_url 只用于 meta / OG / citation 这类必须给绝对地址的地方。 -->
+  <link rel="stylesheet" href="static/css/site.css">
+  <link rel="stylesheet" href="static/vendor/tabulator/tabulator.min.css">
+
+  <!-- 机器可读：搜索引擎与学术索引读这段 JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi",
+  "description": "Task-specific evaluation of rule knowledge and contextual interpretation in Chinese Bazi QA.",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jiulin Li",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Beijing Liuyi Guanhua Technology Co., Ltd."
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Ping Huang",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "State Key Laboratory of General Artificial Intelligence, BIGAI"
+      }
+    }
+  ],
+  "datePublished": "2026-09-29",
+  "url": "http://127.0.0.1:8000",
+  "keywords": [
+    "Bazi",
+    "benchmark",
+    "Chinese QA",
+    "language models",
+    "cultural knowledge",
+    "evaluation"
+  ],
+  "abstract": "Knowing domain rules does not guarantee applying them to a case. We study this distinction in traditional Chinese Bazi through 3,000 Chinese multiple-choice questions spanning 14 Theory and 11 Case categories. Six endpoint systems are evaluated, with primary results reported on a 2,492-item model-informed refinement. Theory accuracy exceeds Case accuracy for every system, and gaps of 16.60–29.56 percentage points remain when invalid responses are excluded. The contrast is more specific than a general case-reasoning deficit. Across six systems, Twelve Stages and Nayin reach mean accuracies of 89.10% and 88.62%, while Shensha Basics reaches 75.96%. Within Case, Luck Pillars averages 84.62%, but Career and Family Relations average only 36.98% and 38.19%. Overall rankings also conceal different category strengths. On the original 3,000 items, paired DeepSeek native/disabled comparisons associate native configurations with Theory gains of 6.53 and 12.20 points for Flash and Pro, respectively; Case changes are -3.67 and +1.27 points. These are provider-configuration associations, not isolated causal effects of reasoning. The results motivate task-specific evaluation of cultural-domain applications rather than reliance on aggregate knowledge scores. The benchmark measures agreement with a model-generated, model-verified answer key, not real-world predictive validity. Final-set results are post-selection descriptions, and incomplete provenance and expert validation constrain their interpretation.",
+  "isAccessibleForFree": true,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Research manuscript · September 2026"
+  }
+}
+  </script>
+</head>
+<body class="page-leaderboard">
+
+  <main id="main-content">
+<!-- 顶部导航 -->
+<nav class="topnav" aria-label="Main navigation">
+  <div class="topnav-inner">
+    <a class="topnav-brand" href="index.html">Bazi QA Benchmark</a>
+    <div class="topnav-links">
+      <a href="index.html">Paper</a>
+      <a href="leaderboard.html">Leaderboard</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 论文标题区 -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered">
+        <h1 class="publication-title">Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi</h1>
+        <p class="paper-tagline">Task-specific evaluation of rule knowledge and contextual interpretation in Chinese Bazi QA.</p>
+
+        <div class="publication-authors">
+<span class="author-block">Jiulin Li<sup>1,*</sup></span>,
+<span class="author-block">Ping Huang<sup>2</sup></span>
+        </div>
+
+        <div class="publication-authors">
+          <span class="author-block">Research manuscript · September 2026</span>
+<span class="affiliation"><sup>1</sup> Beijing Liuyi Guanhua Technology Co., Ltd.</span><span class="affiliation"><sup>2</sup> State Key Laboratory of General Artificial Intelligence, BIGAI</span><span class="correspondence">* Corresponding author: <a href="mailto:lijiulin@18trees.com">lijiulin@18trees.com</a></span>
+        </div>
+
+        <div class="publication-links">
+<span class="link-block"><a class="external-link button" href="pdfs/paper.pdf" target="_blank" rel="noopener"><span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg></span><span>Paper</span></a></span>
+<span class="link-block"><a class="external-link button" href="https://github.com/MonsterPPPP/bazi-qa-benchmark" target="_blank" rel="noopener"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></span><span>Repository</span></a></span>
+<span class="link-block"><a class="external-link button" href="leaderboard.html" target="_blank" rel="noopener"><span class="icon"><svg viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.6-3.6a3 3 0 1 1 4.2 4.2l-1.4 1.4-1.4-1.4 1.4-1.4a1 1 0 0 0-1.4-1.4l-3.6 3.6a1 1 0 0 1-1.4 0zm2.8-2.8a1 1 0 0 1 0 1.4l-3.6 3.6a1 1 0 0 0 1.4 1.4l1.4-1.4 1.4 1.4-1.4 1.4a3 3 0 0 1-4.2-4.2l3.6-3.6a1 1 0 0 1 1.4 0z"/></svg></span><span>Leaderboard</span></a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 主榜单 -->
+<section class="section" id="Leaderboard">
+  <div class="container">
+    <div class="has-text-centered">
+      <h2 class="section-title">Final-set results</h2>
+      <p class="section-note">Recovered aggregate results, checked against the manuscript. Complete per-item responses are not included. Scores and intervals describe an outcome-informed final set.</p>
+    </div>
+
+    <!-- 概览条：题目数恒显；基线锚点只在 site.yaml 配了 baseline 时出现 -->
+<div class="baseline-bar" role="note">
+<span class="baseline-item"><strong>Four-choice baseline</strong> 25.0%</span>
+      <span class="baseline-item"><strong>Best</strong> 75.6%</span>
+      <span class="baseline-item"><strong>vs baseline</strong> +50.6pt</span>
+      <span class="baseline-item baseline-n"><strong>Questions</strong> 2492</span>
+    </div>
+
+    <div id="leaderboard-table" class="leaderboard-table"></div>
+
+<p class="table-footnote"><a href="leaderboard.html">Open leaderboard →</a></p>
+
+    <!-- 口径脚注：只有存在 data/metrics.md 时才渲染 -->
+<div class="metrics-note">
+      <h3>Evaluation Protocol</h3>
+<ul><li><strong>Denominator:</strong> all final-set records for each endpoint; each native run contains 2,492 items (1,454 Theory and 1,038 Case).</li><li><strong>Invalid responses:</strong> empty, malformed, or multiple-answer final outputs count as wrong and remain in the denominator.</li><li><strong>Primary aggregation:</strong> item-weighted micro accuracy, not equal-weight averaging of Theory and Case. Task columns use their own denominators.</li><li><strong>Intervals:</strong> recovered nominal 95% Wilson score intervals, with z = 1.96. Outcome-informed selection and source/chart clustering are not accounted for; the intervals are descriptive.</li><li><strong>Random baseline:</strong> 25% for four-choice questions. Per-row grey annotations show the accuracy difference from this baseline in percentage points.</li><li><strong>Data scope:</strong> recovered aggregate CSV snapshots. Category-level counts reproduce the headline scores, but complete per-item response records are not included. Configuration contrasts in the figures use the original 3,000 items, not the selected final set.</li><li><strong>Source:</strong> manuscript Evaluation Setup, main results, and Appendix Statistical Definitions; original CSV snapshots are preserved under data/sources/.</li></ul>
+    </div>
+
+    <script type="application/json" id="leaderboard-data">{"primary_metric":"overall_acc","primary_label":"Overall","higher_is_better":true,"unit":"percent","baseline":25.0,"has_link":false,"columns":[{"field":"model","title":"Model / endpoint","numeric":false,"fmt":"text","is_model":true},{"field":"overall_acc","title":"Overall","numeric":true,"primary":true,"fmt":"percent"},{"field":"n","title":"Items","numeric":true,"fmt":"int"},{"field":"theory_acc","title":"Theory","numeric":true,"fmt":"percent"},{"field":"case_acc","title":"Case","numeric":true,"fmt":"percent"},{"field":"invalid_pct","title":"Invalid","numeric":true,"fmt":"percent"},{"field":"_ci","title":"95% CI","numeric":false,"fmt":"text"}],"rows":[{"_top":true,"_flagged":false,"model":"Kimi-K3","overall_acc":75.56,"n":2492,"theory_acc":86.04,"case_acc":60.89,"invalid_pct":4.98,"_ci":"[73.84, 77.21]"},{"_top":false,"_flagged":false,"model":"GLM-5.3","overall_acc":75.08,"n":2492,"theory_acc":84.59,"case_acc":61.75,"invalid_pct":0.24,"_ci":"[73.34, 76.74]"},{"_top":false,"_flagged":false,"model":"Qwen3.8-Max","overall_acc":74.84,"n":2492,"theory_acc":84.59,"case_acc":61.18,"invalid_pct":5.98,"_ci":"[73.10, 76.50]"},{"_top":false,"_flagged":false,"model":"DeepSeek-V4.1-Flash","overall_acc":72.43,"n":2492,"theory_acc":83.56,"case_acc":56.84,"invalid_pct":0.0,"_ci":"[70.64, 74.15]"},{"_top":false,"_flagged":false,"model":"DeepSeek-V4-Pro-0813","overall_acc":72.35,"n":2492,"theory_acc":84.66,"case_acc":55.11,"invalid_pct":0.0,"_ci":"[70.56, 74.07]"},{"_top":false,"_flagged":false,"model":"MiniMax-M3","overall_acc":63.2,"n":2492,"theory_acc":71.25,"case_acc":51.93,"invalid_pct":1.08,"_ci":"[61.29, 65.07]"}]}</script>
+  </div>
+</section>
+
+  <!--
+    上游回链：这是 Academic Project Page Template 的授权条件，不是致谢装饰。
+    删除本段即违反 CC BY-SA 4.0 的署名要求。生成器不提供关闭开关。
+  -->
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          Based on <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>,
+          derived from the <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a> project page.
+        </p>
+        <p>
+          Website template licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International</a>.
+        </p>
+        <p class="footer-meta">
+          Generated with <a href="https://github.com/MonsterPPPP/18trees-benchmark-pages-skill" target="_blank" rel="noopener">benchmark-pages</a>
+          · Tables by <a href="https://tabulator.info/" target="_blank" rel="noopener">Tabulator</a> (MIT)
+          · Built 2026-10-04
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  </main>
+
+  <script src="static/vendor/tabulator/tabulator.min.js" defer></script>
+  <script src="static/js/site.js" defer></script>
+  <script src="static/js/leaderboard.js" defer></script>
+</body>
+</html>
