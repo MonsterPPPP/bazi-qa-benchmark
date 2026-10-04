@@ -1,12 +1,6 @@
 title: 'Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi'
 tagline: Task-specific evaluation of rule knowledge and contextual interpretation in Chinese Bazi QA.
-authors:
-  - name: Jiulin Li
-    affiliation: Beijing Liuyi Guanhua Technology Co., Ltd.
-    corresponding: true
-    email: lijiulin@18trees.com
-  - name: Ping Huang
-    affiliation: State Key Laboratory of General Artificial Intelligence, BIGAI
+authors: []
 venue: Research manuscript · September 2026
 date: '2026-09-29'
 lang: en

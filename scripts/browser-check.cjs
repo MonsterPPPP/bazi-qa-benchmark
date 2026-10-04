@@ -27,9 +27,10 @@ const checks = [];
       const body=await page.locator('body').innerText();
       assert.ok(!/[\u4e00-\u9fff]/.test(body),'English UI has Chinese text');
       assert.ok(!/Equal contribution|TODO|PLACEHOLDER|lorem ipsum/i.test(body));
-      assert.ok(body.includes('Corresponding author: lijiulin@18trees.com'));
-      assert.ok(body.includes('Beijing Liuyi Guanhua Technology Co., Ltd.'));
-      assert.ok(body.includes('State Key Laboratory of General Artificial Intelligence, BIGAI'));
+      for (const identity of ['Jiulin Li','Ping Huang','lijiulin@18trees.com','Beijing Liuyi Guanhua Technology Co., Ltd.','State Key Laboratory of General Artificial Intelligence','BIGAI']) {
+        assert.ok(!body.includes(identity),'Author information is displayed: '+identity);
+      }
+      assert.equal(await page.locator('a[href^="mailto:"]').count(),0);
       assert.equal(await page.locator('a[href="#BibTeX"]').count(),0);
       const payload=await page.locator('#leaderboard-data').evaluate(el=>JSON.parse(el.textContent));
       assert.deepEqual(payload.rows.map(r=>r.n),Array(6).fill(2492));

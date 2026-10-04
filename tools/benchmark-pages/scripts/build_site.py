@@ -55,7 +55,7 @@ REQUIRED_BACKLINKS = [
 REQUIRED_STRUCTURE = {
     'class="topnav"': "顶部导航",
     'class="publication-title"': "论文标题区",
-    'class="publication-authors"': "作者区",
+    'class="publication-links"': "论文链接区",
     'class="footer"': "页脚（含上游回链）",
 }
 

@@ -19,7 +19,7 @@ The preview uses 127.0.0.1 on port 8000, then 8001 or 8002 if necessary. State a
 
 ## Browser verification
 
-`scripts/browser-check.cjs` uses Playwright and the installed Microsoft Edge browser to check both pages at desktop and 375px mobile widths. It verifies sorting, global search, header filtering, empty-result recovery, frozen columns, local links, Figure 4, author metadata, attribution, and PDF integrity. Screenshots and reports are written to the ignored `.cache/browser-check/` folder.
+`scripts/browser-check.cjs` uses Playwright and the installed Microsoft Edge browser to check both pages at desktop and 375px mobile widths. It verifies sorting, global search, header filtering, empty-result recovery, frozen columns, local links, Figure 4, absence of displayed author information, attribution, and PDF integrity. Screenshots and reports are written to the ignored `.cache/browser-check/` folder.
 
 ```powershell
 npm install --prefix .cache/browser playwright
@@ -42,6 +42,6 @@ The main scores are verified against 150 recovered category rows. Complete per-i
 
 ## Generator and attribution
 
-The site uses [18trees benchmark-pages](https://github.com/MonsterPPPP/18trees-benchmark-pages-skill), pinned to `5c2a1a5fc7894e31698ed5b64f52e05e0359a3d9`. Local changes supply English UI text, corresponding-author/affiliation rendering, explicit column labels, always-visible filtering, and full-width vector figure viewing. See `tools/benchmark-pages/UPSTREAM.md`.
+The site uses [18trees benchmark-pages](https://github.com/MonsterPPPP/18trees-benchmark-pages-skill), pinned to `5c2a1a5fc7894e31698ed5b64f52e05e0359a3d9`. Local changes supply English UI text, a work-focused header without author information, explicit column labels, always-visible filtering, and full-width vector figure viewing. See `tools/benchmark-pages/UPSTREAM.md`.
 
 The website template is derived from [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) and [Nerfies](https://nerfies.github.io/). Template derivatives retain CC BY-SA 4.0 attribution. Tabulator remains MIT licensed. These template licenses do not establish a redistribution license for the benchmark questions or manuscript. See `NOTICE.md` and the vendored license files.

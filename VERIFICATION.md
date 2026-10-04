@@ -8,6 +8,6 @@
 - All local navigation, image, CSS, JavaScript, and PDF URLs returned HTTP 200.
 - Figure 4 spans the gallery width and its vector SVG opens independently.
 - The served PDF SHA-256 matches the copied revised manuscript.
-- Author affiliations and the corresponding-author marker are present; no equal-contribution label or missing citation navigation is displayed.
+- Author names, affiliations, and contact details are absent from both page headers; no email link, equal-contribution label, or missing citation navigation is displayed.
 - Both pages retain Academic Project Page Template and Nerfies backlinks.
 - No browser JavaScript errors were recorded. Desktop, mobile, leaderboard, and Figure 4 screenshots were visually inspected.
