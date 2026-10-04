@@ -1,0 +1,25 @@
+{
+  "scope": "Recovered aggregate snapshots; no complete per-item responses.",
+  "files": [
+    {
+      "path": "data/sources/category-profile.csv",
+      "bytes": 12919,
+      "sha256": "08d8ea0bf37405f21ccad18b394d902365dc5b397ba521609089915620ec884c"
+    },
+    {
+      "path": "data/sources/leaderboard.csv",
+      "bytes": 269,
+      "sha256": "477f80b41cae39d42c4fa4c400ebdc1b4915fcb093259a45f8803b5943cc6016"
+    },
+    {
+      "path": "data/sources/pairwise.csv",
+      "bytes": 2266,
+      "sha256": "ba38c1c68409cda3757ae350ba840c88f87acd178179d3288922e5e60428d4bb"
+    },
+    {
+      "path": "data/sources/preselection_ablation.csv",
+      "bytes": 501,
+      "sha256": "6be0baf52ce514a4c49f6d879eaa3e919299798d378524befcc090fc35a8784b"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: Benchmark Pages
+  short_description: rawdata + 论文 → GitHub Pages benchmark 主页与排行榜
+  default_prompt: 用 $benchmark-pages 把这批实验数据做成 benchmark 主页和排行榜

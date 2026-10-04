@@ -1,0 +1,3 @@
+# 生成器 scripts/build_site.py 的依赖
+# 只有这一个：YAML 是站点的唯一配置文件格式，手写 JSON 对人不友好。
+PyYAML>=6.0

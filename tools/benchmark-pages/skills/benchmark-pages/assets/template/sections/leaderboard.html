@@ -1,0 +1,21 @@
+<!-- 主榜单 -->
+<section class="section" id="Leaderboard">
+  <div class="container">
+    <div class="has-text-centered">
+      <h2 class="section-title">{{leaderboard.title}}</h2>
+      <p class="section-note">{{leaderboard.note}}</p>
+    </div>
+
+    <!-- 概览条：题目数恒显；基线锚点只在 site.yaml 配了 baseline 时出现 -->
+{{meta_bar}}
+
+    <div id="leaderboard-table" class="leaderboard-table"></div>
+
+{{full_board_link}}
+
+    <!-- 口径脚注：只有存在 data/metrics.md 时才渲染 -->
+{{metrics_block}}
+
+    <script type="application/json" id="leaderboard-data">{{leaderboard.json}}</script>
+  </div>
+</section>

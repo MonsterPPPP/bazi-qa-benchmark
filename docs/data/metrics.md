@@ -1,0 +1,7 @@
+- **Denominator:** all final-set records for each endpoint; each native run contains 2,492 items (1,454 Theory and 1,038 Case).
+- **Invalid responses:** empty, malformed, or multiple-answer final outputs count as wrong and remain in the denominator.
+- **Primary aggregation:** item-weighted micro accuracy, not equal-weight averaging of Theory and Case. Task columns use their own denominators.
+- **Intervals:** recovered nominal 95% Wilson score intervals, with z = 1.96. Outcome-informed selection and source/chart clustering are not accounted for; the intervals are descriptive.
+- **Random baseline:** 25% for four-choice questions. Per-row grey annotations show the accuracy difference from this baseline in percentage points.
+- **Data scope:** recovered aggregate CSV snapshots. Category-level counts reproduce the headline scores, but complete per-item response records are not included. Configuration contrasts in the figures use the original 3,000 items, not the selected final set.
+- **Source:** manuscript Evaluation Setup, main results, and Appendix Statistical Definitions; original CSV snapshots are preserved under data/sources/.

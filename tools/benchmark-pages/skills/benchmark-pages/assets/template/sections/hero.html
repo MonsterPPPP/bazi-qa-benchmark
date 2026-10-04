@@ -1,0 +1,35 @@
+<!-- 顶部导航 -->
+<nav class="topnav" aria-label="Main navigation">
+  <div class="topnav-inner">
+    <a class="topnav-brand" href="index.html">Bazi QA Benchmark</a>
+    <div class="topnav-links">
+      <a href="index.html">Paper</a>
+      <a href="leaderboard.html">Leaderboard</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 论文标题区 -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered">
+        <h1 class="publication-title">{{title}}</h1>
+        <p class="paper-tagline">{{description}}</p>
+
+        <div class="publication-authors">
+{{authors_html}}
+        </div>
+
+        <div class="publication-authors">
+          <span class="author-block">{{venue}}</span>
+{{equal_contribution_html}}
+        </div>
+
+        <div class="publication-links">
+{{links_html}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
