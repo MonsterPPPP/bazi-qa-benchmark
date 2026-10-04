@@ -429,6 +429,7 @@ pre#bibtex-code {
   --bg-alt: #F5F8FA;
 }
 .paper-tagline { max-width: 42em; margin: 0 auto 24px; font-size: 18px; color: var(--ink-soft); }
+.publication-meta { margin-bottom: 10px; font-size: 18px; color: var(--ink-soft); line-height: 2; }
 .affiliation { display: block; font-size: 15px; line-height: 1.8; }
 .correspondence { display: block; font-size: 14px; margin-top: 8px; }
 .publication-authors sup { font-size: 11px; margin-left: 2px; }
