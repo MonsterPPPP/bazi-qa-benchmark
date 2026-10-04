@@ -364,6 +364,7 @@ ICONS = {
 LINK_LABELS = {
     "paper": ("论文", "Paper"), "code": ("代码", "Repository"),
     "dataset": ("数据集", "Dataset"), "arxiv": ("arXiv", "arXiv"),
+    "citation": ("引用", "Citation"),
     "poster": ("海报", "Poster"), "video": ("视频", "Video"),
     "demo": ("Demo", "Demo"), "leaderboard": ("榜单", "Leaderboard"),
 }

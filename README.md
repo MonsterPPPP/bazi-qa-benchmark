@@ -1,47 +1,106 @@
-# Bazi QA Benchmark
+# BaZi2500
 
-Paper: **Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi** — Jiulin Li and Ping Huang, September 2026.
+BaZi2500 is a Chinese four-option multiple-choice benchmark for traditional
+Chinese Bazi rule knowledge and structured case interpretation. The recommended
+public benchmark is the [Hugging Face BaZi2500 release](https://huggingface.co/datasets/MonsterPPPPP/BaZi2500):
+2,492 evaluation items (1,454 Theory and 1,038 Case), across 25 categories.
 
-This repository contains the latest manuscript PDF and an English paper homepage with an interactive leaderboard. The GitHub repository is currently private; the website runs locally.
+The answer key is model-generated and model-verified, with no comprehensive
+expert adjudication. Scores measure agreement with the released key and do not
+establish real-world predictive or metaphysical validity. The item set is
+model-informed; nominal intervals and tests are descriptive after selection.
+
+## Paper
+
+**Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi**
+by Jiulin Li and Ping Huang (2026).
+
+[Current preprint PDF](https://monsterpppp.github.io/bazi-qa-benchmark/pdfs/paper.pdf)
+([repository copy](docs/pdfs/paper.pdf)). An arXiv identifier has not yet been assigned.
+
+## Dataset
+
+[MonsterPPPPP/BaZi2500 on Hugging Face](https://huggingface.co/datasets/MonsterPPPPP/BaZi2500)
+is the canonical public dataset, licensed under CC BY-NC 4.0. The authors have
+confirmed source redistribution rights and completed privacy review.
+
+```python
+from datasets import load_dataset
+data = load_dataset("MonsterPPPPP/BaZi2500", split="test")
+```
+
+## Project Page
+
+[BaZi2500 project page](https://monsterpppp.github.io/bazi-qa-benchmark/)
+provides the preprint, results, limitations, figures and an interactive leaderboard.
+
+## Evaluation
+
+The existing reference prompt and standard-library scorer are in
+[`evaluation/`](evaluation/). Download the canonical data and score an existing
+prediction file containing one `{id, prediction}` record per item:
+
+```sh
+hf download MonsterPPPPP/BaZi2500 data/test.jsonl --repo-type dataset --local-dir .cache/dataset
+python evaluation/evaluate_predictions.py predictions.jsonl --data .cache/dataset/data/test.jsonl
+```
+
+The metric is exact match on A/B/C/D; invalid answers count as wrong and remain
+in the denominator. This repository includes aggregate result snapshots, not
+the complete historical per-item responses or experiment system.
+
+## Citation
+
+Use [`CITATION.cff`](CITATION.cff), or:
+
+```bibtex
+@misc{li2026bazi2500,
+  title = {Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi},
+  author = {Li, Jiulin and Huang, Ping},
+  year = {2026},
+  howpublished = {Preprint},
+  url = {https://monsterpppp.github.io/bazi-qa-benchmark/pdfs/paper.pdf}
+}
+```
+
+After arXiv publication, update `preferred-citation.url` in `CITATION.cff` to
+the assigned arXiv URL. No DOI or arXiv identifier is claimed here.
+
+## License
+
+The benchmark and first-party release materials are licensed under
+**CC BY-NC 4.0**; see [`LICENSE`](LICENSE). The website template and its
+derivatives retain CC BY-SA 4.0, and vendored software retains its own licenses.
+See [`NOTICE.md`](NOTICE.md) for these exceptions and attribution.
+
+## Contact
+
+lijiulin@18trees.com
+
+## Funding and competing interests
+
+This work was supported by Beijing Liuyi Guanhua Technology Co., Ltd.
+The authors declare no competing interests.
 
 ## Build and preview
 
+The existing static site source is `docs/`; committed output is `_site/`.
 On Windows with PowerShell and [uv](https://docs.astral.sh/uv/):
 
 ```powershell
 .\scripts\build.ps1
 .\scripts\serve.ps1 -Open
-# Stop the background preview:
 .\scripts\serve.ps1 -Stop
 ```
 
-The preview uses 127.0.0.1 on port 8000, then 8001 or 8002 if necessary. State and logs live in the ignored `.cache/` folder. For another platform, create a Python 3.12+ environment, install `requirements.txt`, run `python scripts/prepare_site.py`, then `python tools/benchmark-pages/scripts/build_site.py --source docs --out _site --strict`. Serve `_site` with `python -m http.server 8000 --bind 127.0.0.1 --directory _site`.
+For other platforms, install `requirements.txt` and run:
 
-## Browser verification
-
-`scripts/browser-check.cjs` uses Playwright and the installed Microsoft Edge browser to check both pages at desktop and 375px mobile widths. It verifies sorting, global search, header filtering, empty-result recovery, frozen columns, local links, Figure 4, absence of displayed author information, attribution, and PDF integrity. Screenshots and reports are written to the ignored `.cache/browser-check/` folder.
-
-```powershell
-npm install --prefix .cache/browser playwright
-$env:NODE_PATH = "$PWD\.cache\browser\node_modules"
-node .\scripts\browser-check.cjs
+```sh
+python tools/benchmark-pages/scripts/build_site.py --source docs --out _site --strict
+python -m http.server 8000 --bind 127.0.0.1 --directory _site
 ```
 
-## Sources and reproducibility
-
-- `docs/site.yaml`: paper metadata, original abstract, findings, and limitations.
-- `docs/pdfs/paper.pdf`: the revised 16-page manuscript.
-- `docs/data/sources/`: recovered aggregate CSV snapshots.
-- `docs/data/leaderboard.csv`: main table, regenerated and checked against category counts.
-- `docs/data/provenance.json`: SHA-256 hashes of input snapshots.
-- `docs/data/metrics.md`: denominators, invalid-answer handling, aggregation, intervals, and selection limits.
-- `docs/figures/`: revised quantitative figures; the category profile is vector SVG.
-- `_site/`: committed static output. Rebuild after editing source inputs.
-
-The main scores are verified against 150 recovered category rows. Complete per-item model responses are not included, so this package does not independently reproduce the full historical evaluation. The final-set intervals describe an outcome-informed subset. Configuration contrasts use the original 3,000-item set.
-
-## Generator and attribution
-
-The site uses [18trees benchmark-pages](https://github.com/MonsterPPPP/18trees-benchmark-pages-skill), pinned to `5c2a1a5fc7894e31698ed5b64f52e05e0359a3d9`. Local changes supply English UI text, a work-focused header without author information, explicit column labels, always-visible filtering, and full-width vector figure viewing. See `tools/benchmark-pages/UPSTREAM.md`.
-
-The website template is derived from [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) and [Nerfies](https://nerfies.github.io/). Template derivatives retain CC BY-SA 4.0 attribution. Tabulator remains MIT licensed. These template licenses do not establish a redistribution license for the benchmark questions or manuscript. See `NOTICE.md` and the vendored license files.
+The site uses [18trees benchmark-pages](https://github.com/MonsterPPPP/18trees-benchmark-pages-skill),
+pinned to `5c2a1a5fc7894e31698ed5b64f52e05e0359a3d9`, with the existing English
+interface and intentionally hidden author information. Academic Project Page
+Template, Nerfies and Tabulator attribution is retained.

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the preprint below when using BaZi2500. After arXiv publication, update preferred-citation.url to the assigned arXiv URL."
+title: "Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi"
+authors:
+  - family-names: Li
+    given-names: Jiulin
+  - family-names: Huang
+    given-names: Ping
+date-released: '2026-10-04'
+url: https://monsterpppp.github.io/bazi-qa-benchmark/
+repository-code: https://github.com/MonsterPPPP/bazi-qa-benchmark
+license: CC-BY-NC-4.0
+preferred-citation:
+  type: report
+  title: "Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi"
+  authors:
+    - family-names: Li
+      given-names: Jiulin
+    - family-names: Huang
+      given-names: Ping
+  year: 2026
+  url: https://monsterpppp.github.io/bazi-qa-benchmark/pdfs/paper.pdf

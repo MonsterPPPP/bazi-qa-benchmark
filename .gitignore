@@ -3,3 +3,7 @@
 __pycache__/
 *.pyc
 *.log
+.env
+.env.*
+credentials.json
+*.key

@@ -1,16 +1,18 @@
 title: 'Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi'
-tagline: Task-specific evaluation of rule knowledge and contextual interpretation in Chinese Bazi QA.
+tagline: 'BaZi2500: Task-specific evaluation of rule knowledge and contextual interpretation in Chinese Bazi QA.'
 authors: []
 venue: Research manuscript · September 2026
 date: '2026-09-29'
 lang: en
-base_url: http://127.0.0.1:8000
+base_url: https://monsterpppp.github.io/bazi-qa-benchmark
 brand_color: '#2F6690'
 og_image: figures/02_theory_vs_case.png
 keywords: [Bazi, benchmark, Chinese QA, language models, cultural knowledge, evaluation]
 links:
   paper: pdfs/paper.pdf
   code: https://github.com/MonsterPPPP/bazi-qa-benchmark
+  dataset: https://huggingface.co/datasets/MonsterPPPPP/BaZi2500
+  citation: https://github.com/MonsterPPPP/bazi-qa-benchmark/blob/main/CITATION.cff
   leaderboard: leaderboard.html
 abstract: |
   Knowing domain rules does not guarantee applying them to a case. We study this distinction in traditional Chinese Bazi through 3,000 Chinese multiple-choice questions spanning 14 Theory and 11 Case categories. Six endpoint systems are evaluated, with primary results reported on a 2,492-item model-informed refinement. Theory accuracy exceeds Case accuracy for every system, and gaps of 16.60–29.56 percentage points remain when invalid responses are excluded. The contrast is more specific than a general case-reasoning deficit. Across six systems, Twelve Stages and Nayin reach mean accuracies of 89.10% and 88.62%, while Shensha Basics reaches 75.96%. Within Case, Luck Pillars averages 84.62%, but Career and Family Relations average only 36.98% and 38.19%. Overall rankings also conceal different category strengths. On the original 3,000 items, paired DeepSeek native/disabled comparisons associate native configurations with Theory gains of 6.53 and 12.20 points for Flash and Pro, respectively; Case changes are -3.67 and +1.27 points. These are provider-configuration associations, not isolated causal effects of reasoning. The results motivate task-specific evaluation of cultural-domain applications rather than reliance on aggregate knowledge scores. The benchmark measures agreement with a model-generated, model-verified answer key, not real-world predictive validity. Final-set results are post-selection descriptions, and incomplete provenance and expert validation constrain their interpretation.

@@ -11,3 +11,13 @@
 - Author names, affiliations, and contact details are absent from both page headers; no email link, equal-contribution label, or missing citation navigation is displayed.
 - Both pages retain Academic Project Page Template and Nerfies backlinks.
 - No browser JavaScript errors were recorded. Desktop, mobile, leaderboard, and Figure 4 screenshots were visually inspected.
+
+## Pre-arXiv integration
+
+- `CITATION.cff` validates against the official CFF 1.2.0 schema, with the current preprint URL and no invented identifier.
+- Paper, repository and generated website PDF copies have matching SHA-256 values; the 16-page PDF contains working resource annotations for the canonical dataset, repository and project page.
+- The revised paper compiles without undefined references, citations or overfull boxes.
+- Existing aggregate CSVs and figure assets are unchanged by integration.
+- The existing Hugging Face reference prompt and evaluation scorer are copied without modification; the scorer command-line interface is available.
+- Repository content and Git history were scanned for credentials, private machine paths and unrelated large files, with no findings.
+- Dataset, repository and citation buttons are present on both pages; contact and disclosure links preserve the website's hidden author display.

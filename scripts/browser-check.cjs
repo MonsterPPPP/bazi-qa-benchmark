@@ -5,10 +5,10 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '..');
-const state = JSON.parse(fs.readFileSync(path.join(root,'.cache','preview.json'),'utf8').replace(/^\uFEFF/,''));
+const state = process.env.BAZI_CHECK_URL ? {url:process.env.BAZI_CHECK_URL.replace(/\/$/,'')} : JSON.parse(fs.readFileSync(path.join(root,'.cache','preview.json'),'utf8').replace(/^\uFEFF/,''));
 const output = path.join(root,'.cache','browser-check');
 fs.mkdirSync(output,{recursive:true});
-const edge = path.join(process.env['ProgramFiles(x86)'] || 'C:\\Program Files (x86)','Microsoft','Edge','Application','msedge.exe');
+const edge = path.join(process.env['ProgramFiles(x86)'] || process.env.ProgramFiles || '', 'Microsoft','Edge','Application','msedge.exe');
 const checks = [];
 
 (async () => {
@@ -32,6 +32,10 @@ const checks = [];
       }
       assert.equal(await page.locator('a[href^="mailto:"]').count(),0);
       assert.equal(await page.locator('a[href="#BibTeX"]').count(),0);
+      assert.equal(await page.locator('.topnav-brand').innerText(),'BaZi2500');
+      assert.equal(await page.locator('.publication-links a[href="https://huggingface.co/datasets/MonsterPPPPP/BaZi2500"]').count(),1);
+      assert.equal(await page.locator('.publication-links a[href="https://github.com/MonsterPPPP/bazi-qa-benchmark"]').count(),1);
+      assert.equal(await page.locator('.publication-links a[href="https://github.com/MonsterPPPP/bazi-qa-benchmark/blob/main/CITATION.cff"]').count(),1);
       const payload=await page.locator('#leaderboard-data').evaluate(el=>JSON.parse(el.textContent));
       assert.deepEqual(payload.rows.map(r=>r.n),Array(6).fill(2492));
       const sort=page.locator('.tabulator-col[tabulator-field="overall_acc"] .tabulator-col-title');
