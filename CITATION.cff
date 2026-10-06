@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the preprint below when using BaZi2500. After arXiv publication, update preferred-citation.url to the assigned arXiv URL."
+message: "Please cite the BaZi2500 paper below when using this benchmark."
 title: "Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi"
 authors:
   - family-names: Li
@@ -19,4 +19,6 @@ preferred-citation:
     - family-names: Huang
       given-names: Ping
   year: 2026
-  url: https://monsterpppp.github.io/bazi-qa-benchmark/pdfs/paper.pdf
+  number: "arXiv:2610.05682"
+  date-published: '2026-10-05'
+  url: https://arxiv.org/abs/2610.05682

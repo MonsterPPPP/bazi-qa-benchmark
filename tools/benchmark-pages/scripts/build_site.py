@@ -30,6 +30,7 @@ import shutil
 import sys
 from datetime import date
 from pathlib import Path
+from urllib.parse import urljoin
 
 try:
     import yaml
@@ -656,7 +657,7 @@ def base_context(cfg: dict, page_path: str, page_title: str) -> dict:
         "date": cfg["date"],
         "year": str(cfg["date"])[:4],
         "venue": html.escape(cfg.get("venue", "")),
-        "paper_url": cfg["base_url"].rstrip("/") + "/" + cfg["links"].get("paper", ""),
+        "paper_url": urljoin(cfg["base_url"].rstrip("/") + "/", cfg["links"].get("paper", "")),
         "citation_authors": "\n".join(
             f'  <meta name="citation_author" content="{html.escape(a.get("name", ""), quote=True)}">'
             for a in cfg.get("authors", [])

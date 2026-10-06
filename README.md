@@ -15,8 +15,9 @@ model-informed; nominal intervals and tests are descriptive after selection.
 **Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi**
 by Jiulin Li and Ping Huang (2026).
 
-[Current preprint PDF](https://monsterpppp.github.io/bazi-qa-benchmark/pdfs/paper.pdf)
-([repository copy](docs/pdfs/paper.pdf)). An arXiv identifier has not yet been assigned.
+[arXiv:2610.05682](https://arxiv.org/abs/2610.05682) ·
+[Paper PDF](https://arxiv.org/pdf/2610.05682) ·
+[Repository PDF copy](docs/pdfs/paper.pdf).
 
 ## Dataset
 
@@ -58,13 +59,12 @@ Use [`CITATION.cff`](CITATION.cff), or:
   title = {Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi},
   author = {Li, Jiulin and Huang, Ping},
   year = {2026},
-  howpublished = {Preprint},
-  url = {https://monsterpppp.github.io/bazi-qa-benchmark/pdfs/paper.pdf}
+  eprint = {2610.05682},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CL},
+  url = {https://arxiv.org/abs/2610.05682}
 }
 ```
-
-After arXiv publication, update `preferred-citation.url` in `CITATION.cff` to
-the assigned arXiv URL. No DOI or arXiv identifier is claimed here.
 
 ## License
 

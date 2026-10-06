@@ -1,15 +1,16 @@
 title: 'Knowing the Rules, Applying the Rules: Evaluating Language Models on Traditional Chinese Bazi'
 tagline: 'BaZi2500: Task-specific evaluation of rule knowledge and contextual interpretation in Chinese Bazi QA.'
 authors: []
-venue: Research manuscript · September 2026
-date: '2026-09-29'
+venue: 'arXiv:2610.05682 · 2026'
+date: '2026-10-05'
 lang: en
 base_url: https://monsterpppp.github.io/bazi-qa-benchmark
 brand_color: '#2F6690'
 og_image: figures/02_theory_vs_case.png
 keywords: [Bazi, benchmark, Chinese QA, language models, cultural knowledge, evaluation]
 links:
-  paper: pdfs/paper.pdf
+  paper: https://arxiv.org/pdf/2610.05682
+  arxiv: https://arxiv.org/abs/2610.05682
   code: https://github.com/MonsterPPPP/bazi-qa-benchmark
   dataset: https://huggingface.co/datasets/MonsterPPPPP/BaZi2500
   citation: https://github.com/MonsterPPPP/bazi-qa-benchmark/blob/main/CITATION.cff
